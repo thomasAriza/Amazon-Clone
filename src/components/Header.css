@@ -1,0 +1,102 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(44, 44, 66);
+    height: 40px;
+    padding: 10px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.header::-webkit-scrollbar{
+    display: none;
+}
+
+.link_to_home>img{
+    height: 40px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.header>form{
+    display: flex;
+    flex: 1;
+    padding: 15px;
+}
+
+.header>form>input{
+    flex: 1;
+    outline: none;
+}
+
+.search{
+    background-color: rgb(202, 133, 4);
+    color: black;
+}
+
+.sign_in{
+    padding: 15px;
+    text-decoration: none;
+}
+
+.sign_in>div>p{
+    color: white;
+    font-size: 10px;
+}
+.sign_in>div>h1{
+    color: white;
+    font-size: 15px;
+}
+
+.order{
+    padding: 15px;
+}
+.orders>p{
+    color: white;
+    font-size: 10px;
+}
+.orders>h1{
+    color: white;
+    font-size: 15px;
+}
+.link_to_order{
+    text-decoration: none;
+}
+
+.prime{
+    padding: 15px;
+}
+
+.prime>h1{
+    color: white;
+    font-size: 15px;
+}
+
+.prime>p{
+    color: white;
+    font-size: 10px;
+}
+
+.basket{
+    color: white;
+    padding: 15px;
+
+}
+
+
+
+.link_to_checkout{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link_to_checkout>p{
+    color: white;
+}
+
+.link_to_publish{
+    text-decoration: none;
+}

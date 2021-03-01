@@ -1,0 +1,23 @@
+.basketItem{
+    display: flex;
+    padding: 10px;
+}
+
+.basketItem>img{
+    height: 200px;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.basketItem_infos{
+    margin-left: 20px;
+}
+
+.basketItem_infos>button{
+    margin-top: 10px;
+    background-color: rgb(202, 133, 4);
+}
+
+.basketItem_infos>h1{
+    font-size: 16px;
+}

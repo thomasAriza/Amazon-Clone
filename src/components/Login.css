@@ -1,0 +1,58 @@
+.login{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.login_container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    width: 300px;
+}
+
+.login_container>h1{
+    padding: 10px;
+}
+
+.login_container>h{
+    margin-top: 5px;
+}
+
+.login_container>p{
+    padding: 10px;
+    font-size: 12px;
+}
+.signIn_button{
+    margin-top: 20px;
+    height: 30px;
+    background-color: #f0c14b;
+    border-radius: 5px;
+    outline: none;
+}
+
+.login_container>input{
+    outline: none;
+    height: 20px;
+}
+
+.login_container>form>input{
+    outline: none;
+    height: 20px;
+}
+
+.login_container>form{
+    display: flex;
+    flex-direction: column;
+}
+
+.createAccount_button{
+    margin-top: 20px;
+    height: 40px;
+}
+
+.amazon_logo{
+    height: 40px;
+}

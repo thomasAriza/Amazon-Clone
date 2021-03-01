@@ -1,0 +1,33 @@
+.order{
+    display: flex;
+    padding: 20px;
+    background-color: rgb(234,237,237);
+    height: 100%;
+}
+
+.order_right{
+    flex: 0.4;
+    padding: 15px;
+    background-color: white;
+    margin-left: 25px;
+    height: fit-content;
+}
+
+.order_left{
+    flex: 0.6;
+    background-color: white;
+    padding: 20px;
+}
+
+.order_left>h2{
+    border-bottom: 2px solid  rgb(234,237,237);
+    height: 50px;
+}
+.total{
+    border-top: 2px solid  rgb(234,237,237);
+    padding: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

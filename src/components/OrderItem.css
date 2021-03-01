@@ -1,0 +1,10 @@
+.orderItem>img{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.orderItem{
+    display: flex;
+    padding: 10px;
+}
