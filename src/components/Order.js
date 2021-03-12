@@ -4,6 +4,7 @@ import { db } from "../database/firebase"
 import OrderItem from './OrderItem'
 import ReactDOM from "react-dom";
 import {getBasketTotal} from '../dataLayer/reducer';
+import { useStateValue } from '../dataLayer/StateProvider';
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
@@ -28,8 +29,10 @@ const Order = () => {
       }
     const [inBasket, setInBasket] = useState([])
 
+    const[{user},dispath] = useStateValue()
+
     useEffect(() => {
-        db.collection("basket").onSnapshot((snapshot)=>
+        db.collection("users").doc(user.email).collection("basket").onSnapshot((snapshot)=>
             (
             setInBasket(snapshot.docs.map((doc)=>({
                 id: doc.id,
@@ -46,6 +49,7 @@ const Order = () => {
             <div className="order_left">
                 <h2>Your Order</h2>
                 {
+                    user?
                     inBasket.map((item)=>{
                         return(
                             <OrderItem
@@ -56,7 +60,7 @@ const Order = () => {
                                 rating={item.rating}
                             />
                         )
-                    })
+                    }):null
                 }
                 <h1 className="total">Total : ${getBasketTotal(inBasket)}</h1>
             </div>

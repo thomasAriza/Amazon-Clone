@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import "./Login.css"
-import {auth} from "../database/firebase"
+import {auth,db} from "../database/firebase"
 
 const Login = () => {
 
@@ -32,7 +32,9 @@ const Login = () => {
             }
         }).
         catch((error)=>alert(error.message))
-
+        db.collection("users").doc(email).set({
+            name:email
+        })
     }
 
 

@@ -1,21 +1,38 @@
 import React, {useEffect} from 'react'
 import "./Product.css"
 import {db} from "../database/firebase"
-import { gsap } from "gsap";
+import { useStateValue } from '../dataLayer/StateProvider';
+import { useHistory } from 'react-router-dom'
 
 
 const Product = ({title,image,price,rating}) => {
+    const history = useHistory();
+    const[{user},dispath] = useStateValue()
 
     const onClick = (event) => {
-        db.collection('basket').add({
-            name: title,
-            image: image,
-            price: price,
-            rating: rating
-        },
-        console.log(price)
-        
-        )
+        if(user)
+            {
+                    db.collection("users").doc(user.email).collection("basket").add({
+                        name: title,
+                        image: image,
+                        price: price,
+                        rating: rating
+                    }
+                    
+                    )
+            //     u.collection('basket').add({
+            //     name: title,
+            //     image: image,
+            //     price: price,
+            //     rating: rating
+            // }
+            
+            // )
+        }
+        else
+        {
+            history.push("/login")
+        }
     }
 
     const buttonOnMouseEnter = (event) => {

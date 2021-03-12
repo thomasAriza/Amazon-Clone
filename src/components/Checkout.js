@@ -23,7 +23,8 @@ const Checkout = () => {
     // }, [inBasket])
 
     useEffect(() => {
-        db.collection("basket").onSnapshot((snapshot)=>
+        if(user)
+        {db.collection("users").doc(user.email).collection("basket").onSnapshot((snapshot)=>
             (
             // setTotal(snapshot.docs.map)((doc)=>
             //     doc.data().price
@@ -36,7 +37,7 @@ const Checkout = () => {
                 rating: doc.data().rating
                 }
             ))))
-        )
+        )}
     }, [])
 
     const history = useHistory();
@@ -55,6 +56,7 @@ const Checkout = () => {
             <div className="checkout_left">
                 <h2>Your Shopping Basket</h2>
                 {
+                    user?
                     inBasket.map((item)=>{
                         return(
                             <BasketItem
@@ -66,7 +68,7 @@ const Checkout = () => {
                                 rating={item.rating}
                             />
                         )
-                    })
+                    }):null
                 }
             </div>
 
