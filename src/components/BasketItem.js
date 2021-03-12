@@ -1,11 +1,13 @@
 import React from 'react'
 import "./BasketItem.css"
 import {db} from "../database/firebase"
+import { useStateValue } from '../dataLayer/StateProvider';
 
 const BasketItem = ({id,name, price, image, rating}) => {
     
+    const[{user},dispath] = useStateValue()
     const onRemove = () => {
-        db.collection("basket").doc(id).delete()
+        db.collection("users").doc(user.email).collection("basket").doc(id).delete()
     }
 
     return (
