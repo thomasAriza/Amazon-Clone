@@ -15,7 +15,7 @@ const Header = () => {
     
 
     useEffect(() => {
-        db.collection("users").doc(user.email).collection("basket").onSnapshot((snapshot)=>
+        db.collection("users").doc(user?.email).collection("basket").onSnapshot((snapshot)=>
             setInBasket(snapshot.docs.map((doc)=>({
                 id: doc.id,
             })))
